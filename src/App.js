@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { use, useEffect } from 'react'
+
 
 function App() {
-  return (
-    <div className="p-8"> <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1></div>
-  )
+  useEffect(() => {
+    fetch("/products-api/api/products.json")
+      .then(res => res.json())
+      .then(res => console.log(res))
+  }, [])
+
+  useEffect(() => {
+    fetch("/products-api/api/products/1.json")
+      .then(res => res.json())
+      .then(res => console.log(res))
+  })
+  return <div>rina</div>
 }
 
 export default App
