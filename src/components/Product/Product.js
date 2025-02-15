@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-function Product({ handleAddToCart, activeButtons = {} }) {  // Default value for activeButtons
+function Product({ handleAddToCart, activeButtons = {} }) {
     let { id } = useParams();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
