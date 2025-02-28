@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
     return (
-        <footer className="flex flex-col md:flex-row justify-between items-center w-full p-10 bg-pink-400 text-white text-center">
+        <footer className="flex  flex-col md:flex-row justify-between items-center w-full p-10 bg-pink-400 text-white text-center">
             <p>© 2025 Ecommerce. Your go-to shopping platform.</p>
             <p>
                 Contact us:{" "}
