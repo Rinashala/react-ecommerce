@@ -49,8 +49,7 @@ function App() {
               category={category}
               products={products}
               cart={cart}
-              handleAddToCart={handleAddToCart}
-              activeButtons={activeButtons}
+
             />
           }
         />

@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { NavLink } from "react-router-dom";
-import ProductsPagination from "../ProductsPagination";
 
-function Products({ products, cart, handleAddToCart, activeButtons }) {
+function Products({ products, cart }) {
     const [searchedFilteredProducts, setSearchedFilteredProducts] = useState(products);
     const [currentPage, setCurrentPage] = useState(1);
     const pageSize = 6;
@@ -65,8 +64,17 @@ function Products({ products, cart, handleAddToCart, activeButtons }) {
                     </NavLink>
                 ))}
             </ul>
-            <ProductsPagination numberOfPages={numberOfPages} setCurrentPage={setCurrentPage} currentPage={currentPage} />
-        </div>
+            <div className="flex justify-center gap-4 mt-8">
+                {Array.from({ length: numberOfPages }).map((_, i) => (
+                    <span
+                        key={i}
+                        onClick={() => setCurrentPage(i + 1)}
+                        className={`text-white px-4 py-2 rounded-lg cursor-pointer ${currentPage === i + 1 ? "bg-pink-600" : "bg-pink-400  hover:bg-pink-600 transition"}`}
+                    >
+                        {i + 1}
+                    </span>
+                ))}
+            </div>        </div>
     );
 }
 
